@@ -803,9 +803,10 @@
       </a>
       <nav class="nav-actions" aria-label="快速筛选">
         <button class="nav-pill is-active" type="button" data-nav-filter="全部">全部</button>
-        <button class="nav-pill" type="button" data-nav-filter="产品类">产品</button>
-        <button class="nav-pill" type="button" data-nav-filter="包装视觉类">包装视觉</button>
+        <button class="nav-pill" type="button" data-nav-filter="产品设计">产品</button>
+        <button class="nav-pill" type="button" data-nav-filter="包装视觉">包装视觉</button>
         <button class="nav-pill" type="button" data-nav-filter="CMF">CMF</button>
+        <button class="nav-pill" type="button" data-nav-filter="创意工具">创意工具</button>
         <button class="nav-pill" type="button" data-nav-filter="综合">综合</button>
       </nav>
     </div>
@@ -852,68 +853,72 @@
 
   <script>
     const COMPANIES = [
-      { name: "IDEO", url: "https://ideo.cn/", notes: ["创新咨询"], category: "产品类", region: "欧美" },
-      { name: "frog", url: "https://www.frog.co/", notes: [], category: "产品类", region: "欧美" },
-      { name: "BMW Designworks", url: "https://www.bmwgroupdesignworks.com/", notes: ["宝马设计团队"], category: "产品类", region: "欧美" },
-      { name: "fuseproject", url: "https://fuseproject.com/", notes: ["可持续"], category: "产品类", region: "欧美" },
-      { name: "Smart Design", url: "https://smartdesignworldwide.com/", notes: ["用户研究"], category: "产品类", region: "欧美" },
-      { name: "whipsaw", url: "https://whipsaw.com/", notes: ["创新前沿"], category: "产品类", region: "欧美" },
-      { name: "ammunition", url: "https://ammunitiongroup.com/", notes: ["电子消费品"], category: "产品类", region: "欧美" },
-      { name: "newdealdesign", url: "https://www.newdealdesign.com/", notes: ["穿戴设备"], category: "产品类", region: "欧美" },
-      { name: "priestmangoode", url: "https://www.priestmangoode.com/", notes: ["航空"], category: "产品类", region: "欧美" },
-      { name: "LAYER", url: "https://layerdesign.com/", notes: ["B&O"], category: "产品类", region: "欧美" },
-      { name: "Seymourpowell", url: "https://www.seymourpowell.com/", notes: ["趋势研究", "交通出行"], category: "产品类", region: "欧美" },
-      { name: "native", url: "https://native.com/", notes: ["智能硬件"], category: "产品类", region: "欧美" },
-      { name: "mapprojectoffice", url: "https://mapprojectoffice.com/", notes: ["创新科技", "IBM"], category: "产品类", region: "欧美" },
-      { name: "pininfarina", url: "https://pininfarina.it/about/awards", notes: ["宾尼法利纳"], category: "产品类", region: "欧美" },
-      { name: "italdesign", url: "https://www.italdesign.it/en/", notes: ["交通出行"], category: "产品类", region: "欧美" },
-      { name: "propellerdesign", url: "https://propellerdesign.com/", notes: ["交通出行"], category: "产品类", region: "欧美" },
-      { name: "PHOENIX", url: "https://www.phoenixdesign.com/", notes: ["家居 卫浴"], category: "产品类", region: "欧美" },
-      { name: "TEAMS", url: "https://www.teamsdesign.com/", notes: ["专业工具类产品"], category: "产品类", region: "欧美" },
-      { name: "barskidesign", url: "https://www.barskidesign.com/en/", notes: ["医疗", "仪器"], category: "产品类", region: "欧美" },
-      { name: "yellowdesign", url: "https://www.yellowdesign.com/", notes: ["家居"], category: "产品类", region: "欧美" },
-      { name: "Studio F. A. Porsche", url: "https://www.studiofaporsche.com/en/", notes: [], category: "产品类", region: "欧美" },
-      { name: "kaschkasch", url: "https://kaschkasch.com/", notes: ["家具"], category: "产品类", region: "欧美" },
-      { name: "dca-design", url: "https://www.dca-design.com/", notes: ["医疗"], category: "产品类", region: "欧美" },
-      { name: "enseradesign", url: "https://www.enseradesign.com/", notes: [], category: "产品类", region: "欧美" },
-      { name: "therefore", url: "https://www.therefore.com/", notes: [], category: "产品类", region: "欧美" },
-      { name: "cobaltdesign", url: "https://cobaltdesign.co/", notes: ["医疗"], category: "产品类", region: "欧美" },
-      { name: "tangerine", url: "https://tangerine.net/", notes: ["航空"], category: "产品类", region: "欧美" },
-      { name: "TACTILE", url: "https://tactileinc.com/", notes: ["专业工具类产品"], category: "产品类", region: "欧美" },
-      { name: "boulddesign", url: "https://www.bould.com/", notes: ["达芬奇，nest"], category: "产品类", region: "欧美" },
-      { name: "modo", url: "https://www.modocarts.com/", notes: ["医疗推车"], category: "产品类", region: "欧美" },
-      { name: "designwesen", url: "https://www.designwesen.com/", notes: ["徕卡仪器"], category: "产品类", region: "欧美" },
-      { name: "nr21 DESIGN", url: "https://nr21.com/", notes: [], category: "产品类", region: "欧美" },
-      { name: "Audi-mediacenter", url: "https://www.audi-mediacenter.com/en/models-4", notes: ["奥迪汽车设计图库"], category: "产品类", region: "欧美" },
-      { name: "wearefluid", url: "https://www.wearefluid.com/", notes: [], category: "产品类", region: "欧美" },
-      { name: "teenage engineering", url: "https://teenage.engineering/", notes: [], category: "产品类", region: "欧美" },
-      { name: "held+team", url: "https://heldundteam.de/", notes: ["医疗专家"], category: "产品类", region: "欧美" },
-      { name: "vitalygrossmann", url: "https://vitalygrossmann.com/", notes: [], category: "产品类", region: "欧美" },
-      { name: "huge", url: "https://huge-design.com/", notes: [], category: "产品类", region: "欧美" },
-      { name: "MOMA Design", url: "http://www.designmoma-sh.com/", notes: [], category: "产品类", region: "中国" },
-      { name: "indare", url: "http://www.in-dare.com/", notes: ["营销 战略"], category: "产品类", region: "中国" },
-      { name: "YANG design", url: "http://www.yang-design.com/", notes: ["CMF"], category: "产品类", region: "中国" },
-      { name: "佳简几何", url: "http://www.xivodesign.com/", notes: ["消费类产品年轻化"], category: "产品类", region: "中国" },
-      { name: "moorgen", url: "https://www.moorgen.com/zh-cn", notes: ["智能家居制造商"], category: "产品类", region: "中国" },
-      { name: "LEAPX", url: "https://leapx.cn/", notes: [], category: "产品类", region: "中国" },
-      { name: "Suosi", url: "https://www.suosi-design.com/", notes: [], category: "产品类", region: "中国" },
-      { name: "nendo", url: "https://www.nendo.jp/en/", notes: [], category: "产品类", region: "日本" },
-      { name: "gk-design", url: "https://www.gk-design.co.jp/en/", notes: [], category: "产品类", region: "日本" },
-      { name: "nosigner", url: "https://nosigner.com/", notes: [], category: "产品类", region: "日本" },
-      { name: "samsung design", url: "https://design.samsung.com/global/main/", notes: [], category: "产品类", region: "韩国" },
-      { name: "BKID", url: "http://bkid.co/about/", notes: [], category: "产品类", region: "韩国" },
-      { name: "Vlndstudio", url: "https://vlndstudio.com/", notes: [], category: "产品类", region: "韩国" },
-      { name: "acasso", url: "http://www.acasso.com/projects", notes: [], category: "产品类", region: "韩国" },
-      { name: "BEBOP", url: "https://bebopdesign.co/project", notes: [], category: "产品类", region: "韩国" },
-      { name: "BUYRUS", url: "https://www.buyrusdesign.com/en", notes: [], category: "产品类", region: "韩国" },
-      { name: "jaewanjeong", url: "https://www.jaewanjeong.com/", notes: [], category: "产品类", region: "韩国" },
-      { name: "ablackcover", url: "https://ablackcover.com/", notes: [], category: "包装视觉类", region: "包装视觉类" },
-      { name: "潘虎设计实验室", url: "https://tigerpan.com", notes: ["国潮包装"], category: "包装视觉类", region: "包装视觉类" },
-      { name: "UDL", url: "https://u-d-l.com", notes: [], category: "包装视觉类", region: "包装视觉类" },
-      { name: "pentagram", url: "https://www.pentagram.com/", notes: ["品牌-空间-产品"], category: "包装视觉类", region: "包装视觉类" },
-      { name: "kontrapunkt", url: "https://kontrapunkt.com/", notes: ["公共系统"], category: "包装视觉类", region: "包装视觉类" },
-      { name: "designm4", url: "https://www.designm4.com/", notes: [], category: "包装视觉类", region: "包装视觉类" },
-      { name: "renderfolk", url: "https://www.renderfolk.xyz/", notes: ["3D视觉表现"], category: "包装视觉类", region: "包装视觉类" },
+      { name: "IDEO", url: "https://ideo.cn/", notes: ["创新咨询"], category: "产品设计", region: "欧美" },
+      { name: "frog", url: "https://www.frog.co/", notes: [], category: "产品设计", region: "欧美" },
+      { name: "BMW Designworks", url: "https://www.bmwgroupdesignworks.com/", notes: ["宝马设计团队"], category: "产品设计", region: "欧美" },
+      { name: "fuseproject", url: "https://fuseproject.com/", notes: ["可持续"], category: "产品设计", region: "欧美" },
+      { name: "Smart Design", url: "https://smartdesignworldwide.com/", notes: ["用户研究"], category: "产品设计", region: "欧美" },
+      { name: "whipsaw", url: "https://whipsaw.com/", notes: ["创新前沿"], category: "产品设计", region: "欧美" },
+      { name: "ammunition", url: "https://ammunitiongroup.com/", notes: ["电子消费品"], category: "产品设计", region: "欧美" },
+      { name: "newdealdesign", url: "https://www.newdealdesign.com/", notes: ["穿戴设备"], category: "产品设计", region: "欧美" },
+      { name: "priestmangoode", url: "https://www.priestmangoode.com/", notes: ["航空"], category: "产品设计", region: "欧美" },
+      { name: "LAYER", url: "https://layerdesign.com/", notes: ["B\u0026O"], category: "产品设计", region: "欧美" },
+      { name: "Seymourpowell", url: "https://www.seymourpowell.com/", notes: ["趋势研究", "交通出行"], category: "产品设计", region: "欧美" },
+      { name: "native", url: "https://native.com/", notes: ["智能硬件"], category: "产品设计", region: "欧美" },
+      { name: "mapprojectoffice", url: "https://mapprojectoffice.com/", notes: ["创新科技", "IBM"], category: "产品设计", region: "欧美" },
+      { name: "pininfarina", url: "https://pininfarina.it/about/awards", notes: ["宾尼法利纳"], category: "产品设计", region: "欧美" },
+      { name: "italdesign", url: "https://www.italdesign.it/en/", notes: ["交通出行"], category: "产品设计", region: "欧美" },
+      { name: "propellerdesign", url: "https://propellerdesign.com/", notes: ["交通出行"], category: "产品设计", region: "欧美" },
+      { name: "PHOENIX", url: "https://www.phoenixdesign.com/", notes: ["家居 卫浴"], category: "产品设计", region: "欧美" },
+      { name: "TEAMS", url: "https://www.teamsdesign.com/", notes: ["专业工具类产品"], category: "产品设计", region: "欧美" },
+      { name: "barskidesign", url: "https://www.barskidesign.com/en/", notes: ["医疗", "仪器"], category: "产品设计", region: "欧美" },
+      { name: "yellowdesign", url: "https://www.yellowdesign.com/", notes: ["家居"], category: "产品设计", region: "欧美" },
+      { name: "Studio F. A. Porsche", url: "https://www.studiofaporsche.com/en/", notes: [], category: "产品设计", region: "欧美" },
+      { name: "kaschkasch", url: "https://kaschkasch.com/", notes: ["家具"], category: "产品设计", region: "欧美" },
+      { name: "dca-design", url: "https://www.dca-design.com/", notes: ["医疗"], category: "产品设计", region: "欧美" },
+      { name: "enseradesign", url: "https://www.enseradesign.com/", notes: [], category: "产品设计", region: "欧美" },
+      { name: "therefore", url: "https://www.therefore.com/", notes: [], category: "产品设计", region: "欧美" },
+      { name: "cobaltdesign", url: "https://cobaltdesign.co/", notes: ["医疗"], category: "产品设计", region: "欧美" },
+      { name: "tangerine", url: "https://tangerine.net/", notes: ["航空"], category: "产品设计", region: "欧美" },
+      { name: "TACTILE", url: "https://tactileinc.com/", notes: ["专业工具类产品"], category: "产品设计", region: "欧美" },
+      { name: "boulddesign", url: "https://www.bould.com/", notes: ["达芬奇，nest"], category: "产品设计", region: "欧美" },
+      { name: "modo", url: "https://www.modocarts.com/", notes: ["医疗推车"], category: "产品设计", region: "欧美" },
+      { name: "designwesen", url: "https://www.designwesen.com/", notes: ["徕卡仪器"], category: "产品设计", region: "欧美" },
+      { name: "nr21 DESIGN", url: "https://nr21.com/", notes: [], category: "产品设计", region: "欧美" },
+      { name: "Audi-mediacenter", url: "https://www.audi-mediacenter.com/en/models-4", notes: ["奥迪汽车设计图库"], category: "产品设计", region: "欧美" },
+      { name: "wearefluid", url: "https://www.wearefluid.com/", notes: [], category: "产品设计", region: "欧美" },
+      { name: "teenage engineering", url: "https://teenage.engineering/", notes: [], category: "产品设计", region: "欧美" },
+      { name: "held+team", url: "https://heldundteam.de/", notes: ["医疗专家"], category: "产品设计", region: "欧美" },
+      { name: "vitalygrossmann", url: "https://vitalygrossmann.com/", notes: [], category: "产品设计", region: "欧美" },
+      { name: "huge", url: "https://huge-design.com/", notes: [], category: "产品设计", region: "欧美" },
+      { name: "MOMA Design", url: "http://www.designmoma-sh.com/", notes: [], category: "产品设计", region: "中国" },
+      { name: "indare", url: "http://www.in-dare.com/", notes: ["营销 战略"], category: "产品设计", region: "中国" },
+      { name: "YANG design", url: "http://www.yang-design.com/", notes: ["CMF"], category: "产品设计", region: "中国" },
+      { name: "佳简几何", url: "http://www.xivodesign.com/", notes: ["消费类产品年轻化"], category: "产品设计", region: "中国" },
+      { name: "moorgen", url: "https://www.moorgen.com/zh-cn", notes: ["智能家居制造商"], category: "产品设计", region: "中国" },
+      { name: "LEAPX", url: "https://leapx.cn/", notes: [], category: "产品设计", region: "中国" },
+      { name: "Suosi", url: "https://www.suosi-design.com/", notes: [], category: "产品设计", region: "中国" },
+      { name: "nendo", url: "https://www.nendo.jp/en/", notes: [], category: "产品设计", region: "日本" },
+      { name: "gk-design", url: "https://www.gk-design.co.jp/en/", notes: [], category: "产品设计", region: "日本" },
+      { name: "nosigner", url: "https://nosigner.com/", notes: [], category: "产品设计", region: "日本" },
+      { name: "samsung design", url: "https://design.samsung.com/global/main/", notes: [], category: "产品设计", region: "韩国" },
+      { name: "BKID", url: "http://bkid.co/about/", notes: [], category: "产品设计", region: "韩国" },
+      { name: "Vlndstudio", url: "https://vlndstudio.com/", notes: [], category: "产品设计", region: "韩国" },
+      { name: "acasso", url: "http://www.acasso.com/projects", notes: [], category: "产品设计", region: "韩国" },
+      { name: "BEBOP", url: "https://bebopdesign.co/project", notes: [], category: "产品设计", region: "韩国" },
+      { name: "BUYRUS", url: "https://www.buyrusdesign.com/en", notes: [], category: "产品设计", region: "韩国" },
+      { name: "jaewanjeong", url: "https://www.jaewanjeong.com/", notes: [], category: "产品设计", region: "韩国" },
+      { name: "novvdesign", url: "https://novvdesign.com/", notes: [], category: "产品设计", region: "韩国" },
+      { name: "citrus", url: "https://citrusdesign.co.kr/", notes: [], category: "产品设计", region: "韩国" },
+      { name: "ablackcover", url: "https://ablackcover.com/", notes: [], category: "包装视觉", region: "包装视觉" },
+      { name: "潘虎设计实验室", url: "https://tigerpan.com", notes: ["国潮包装"], category: "包装视觉", region: "包装视觉" },
+      { name: "UDL", url: "https://u-d-l.com", notes: [], category: "包装视觉", region: "包装视觉" },
+      { name: "pentagram", url: "https://www.pentagram.com/", notes: ["品牌-空间-产品"], category: "包装视觉", region: "包装视觉" },
+      { name: "kontrapunkt", url: "https://kontrapunkt.com/", notes: ["公共系统"], category: "包装视觉", region: "包装视觉" },
+      { name: "designm4", url: "https://www.designm4.com/", notes: [], category: "包装视觉", region: "包装视觉" },
+      { name: "renderfolk", url: "https://www.renderfolk.xyz/", notes: ["3D视觉表现"], category: "包装视觉", region: "包装视觉" },
+      { name: "dieline", url: "https://thedieline.com", notes: ["包装设计奖项"], category: "包装视觉", region: "包装视觉" },
+      { name: "SDL", url: "https://www.stockholmdesignlab.se/", notes: [], category: "包装视觉", region: "包装视觉" },
       { name: "HIDA", url: "https://www.hidalab.com/eng/main/index.html", notes: [], category: "CMF", region: "CMF" },
       { name: "moodshow", url: "https://www.moodshow.net/home", notes: [], category: "CMF", region: "CMF" },
       { name: "Material ConneXion", url: "https://www.materialconnexion.com/", notes: [], category: "CMF", region: "CMF" },
@@ -922,12 +927,24 @@
       { name: "wgsn", url: "https://www.wgsn.com/en", notes: [], category: "CMF", region: "CMF" },
       { name: "stylus", url: "https://stylus.com/", notes: [], category: "CMF", region: "CMF" },
       { name: "thefuturelaboratory", url: "https://www.thefuturelaboratory.com/", notes: [], category: "CMF", region: "CMF" },
+      { name: "effect", url: "https://effect.app/", notes: ["图片特效"], category: "创意工具", region: "创意工具" },
+      { name: "solidvents", url: "https://solidvents.com/", notes: ["在线参数化"], category: "创意工具", region: "创意工具" },
+      { name: "icraft", url: "https://icraft.gantcloud.com/", notes: ["3D流程图"], category: "创意工具", region: "创意工具" },
       { name: "Star", url: "https://star.global/cn/", notes: ["创新思维"], category: "综合", region: "综合" },
       { name: "kickstarter", url: "https://www.kickstarter.com/?ref=nav", notes: ["产品众筹网站"], category: "综合", region: "综合" },
-      { name: "Yanko Design", url: "https://www.yankodesign.com/", notes: ["设计资讯"], category: "综合", region: "综合" }
+      { name: "Yanko Design", url: "https://www.yankodesign.com/", notes: ["设计资讯"], category: "综合", region: "综合" },
+      { name: "designburger", url: "https://www.designburger.com/", notes: ["设计展示"], category: "综合", region: "综合" }
     ];
 
     const BRAND_LOGOS = new Map([
+      ["novvdesign", { src: "assets/logos/NOVVDESIGN_LOGO.png?v=20260701181311", maxWidth: "150px", maxHeight: "42px" }],
+      ["citrus", { src: "assets/logos/Citrus_logo_black.png?v=20260701181533", maxWidth: "148px", maxHeight: "42px" }],
+      ["dieline", { src: "assets/logos/DIELINE.png?v=20260701175258", maxWidth: "140px", maxHeight: "42px" }],
+      ["sdl", { src: "assets/logos/SDL.png?v=20260701175721", maxWidth: "145px", maxHeight: "42px" }],
+      ["effect", { src: "assets/logos/effec.png?v=20260701180202", maxWidth: "126px", maxHeight: "44px" }],
+      ["solidvents", { src: "assets/logos/solidvents.png?v=20260701180603", maxWidth: "154px", maxHeight: "42px" }],
+      ["designburger", { src: "assets/logos/designburger.svg?v=20260701181035", maxWidth: "154px", maxHeight: "42px" }],
+      ["icraft", { src: "assets/logos/7f75d439-80ca-4f8e-8f8b-57002b7a983b.png?v=20260701180845", maxWidth: "130px", maxHeight: "46px" }],
       ["tactile", { src: "assets/logos/tactile.svg?v=20260624112548" }],
       ["audi-mediacenter", { src: "assets/logos/audi.png?v=20260625183310", maxWidth: "150px", maxHeight: "46px" }],
       ["bmw designworks", { src: "assets/logos/BMW%20Designworks.png?v=20260624132528", maxWidth: "72px", maxHeight: "52px" }],
@@ -1086,8 +1103,8 @@
     const navPills = Array.from(document.querySelectorAll("[data-nav-filter]"));
 
     const collator = new Intl.Collator("zh-CN", { numeric: true, sensitivity: "base" });
-    const categoryOrder = new Map(["产品类", "包装视觉类", "CMF", "综合"].map((name, index) => [name, index]));
-    const regionOrder = new Map(["欧美", "中国", "日本", "韩国", "国际", "国内", "CMF", "综合"].map((name, index) => [name, index]));
+    const categoryOrder = new Map(["产品设计", "包装视觉", "CMF", "创意工具", "综合"].map((name, index) => [name, index]));
+    const regionOrder = new Map(["欧美", "中国", "日本", "韩国", "包装视觉", "CMF", "创意工具", "综合"].map((name, index) => [name, index]));
     const companyOrder = new Map(COMPANIES.map((item, index) => [`${item.name}|${item.url}`, index]));
     const categories = ["全部", ...uniqueCategories(COMPANIES.map((item) => item.category))];
     const regions = ["全部", ...uniqueRegions(COMPANIES.map((item) => item.region))];
@@ -1408,6 +1425,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
